@@ -1,156 +1,78 @@
-/* 基本布局 */
+/* codmobile.css */
+
+/* 基本页面样式 */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-    background-color: #C49A6C; /* 摩卡慕斯色背景 */
+    background-color: #F4D9B4; /* 淡米色背景 */
     color: #4A3C31; /* 深棕色文字 */
 }
 
-/* 头部样式 */
-header {
-    background: #C49A6C; /* 摩卡慕斯色 */
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-    position: relative;
-}
-
-.header-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 20px;
-}
-
-.header-container .header-info {
-    text-align: left;
-    margin-right: 20px;
-}
-
-.header-container h1 {
-    margin: 0;
-    font-size: 3rem;
-}
-
-.header-container .header-info p {
-    margin-top: 5px;
-    font-size: 1.2rem;
-}
-
-.logo {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-.logo img {
-    width: 200px; /* 固定Logo大小为200px */
-    height: auto;
-}
-
-/* 导航栏 */
-nav {
-    background: #A77B4F; /* 深棕色 */
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 15px;
-    display: block;
-    transition: background 0.3s;
-}
-
-nav ul li a:hover {
-    background: #9E7B4F; /* 更深的棕色 */
-    border-radius: 5px;
-}
-
-nav ul li .order-btn {
-    background-color: #FF8C42; /* 橙色 */
-    border-radius: 5px;
-}
-
-/* 服务概览 */
-.services-overview {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-}
-
-.service-card {
-    background: #F4D9B4; /* 淡米色 */
-    border: 1px solid #ddd;
-    margin: 10px;
-    padding: 15px;
-    text-align: center;
-    width: 250px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.service-card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-.service-card h3 {
-    margin: 10px 0;
-    color: #4A3C31;
-}
-
-.service-card .btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background: #FF8C42; /* 橙色按钮 */
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-.service-card .btn:hover {
-    background: #E7802C;
-}
-
-/* 下单按钮部分 */
-.order-section {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #F4D9B4; /* 淡米色 */
-    margin-top: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.order-section h2 {
+/* 标题样式 */
+h2 {
     font-size: 2.5rem;
-    margin-bottom: 10px;
+    text-align: center;
     color: #4A3C31;
+    margin-bottom: 30px;
+    text-transform: uppercase;
 }
 
-.order-section p {
-    font-size: 1.1rem;
+/* 价格区块样式 */
+.price-section {
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 900px;
+    background-color: #F1D1A1; /* 改为摩卡色，避免白色 */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 价格分类（多人排位、战场排位、代刷皮） */
+.price-category {
+    background-color: #FFF0D2; /* 淡米色背景，避免白色 */
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 2px solid #C97C3A; /* 调整边框颜色为温暖的色调，统一为摩卡色 */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.price-category h3 {
+    font-size: 2rem;
+    color: #4A3C31;
     margin-bottom: 20px;
+    text-align: center;
 }
 
+/* 价格列表 */
+.price-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.price-list li {
+    font-size: 1.2rem;
+    padding: 10px;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.price-list li:last-child {
+    border-bottom: none;
+}
+
+/* 价格表分隔线 */
+.price-category:nth-child(odd) {
+    background-color: #F4D9B4;
+}
+
+.price-category:nth-child(even) {
+    background-color: #F4D9B4;
+}
+
+/* 下单按钮 */
 .order-now-btn {
     background-color: #FF8C42;
     color: #fff;
@@ -158,31 +80,141 @@ nav ul li .order-btn {
     text-decoration: none;
     font-size: 1.2rem;
     border-radius: 5px;
+    display: inline-block;
+    margin: 30px auto;
+    text-align: center;
 }
 
-/* 联系方式 */
-footer {
+.order-now-btn:hover {
+    background-color: #D67630;
+}
+
+/* 导航栏样式 */
+.navbar {
+    background-color: #4A3C31; /* 深棕色 */
+    overflow: hidden;
+    width: 100%;
+    text-align: center; /* 将导航栏内容居中 */
+    margin-bottom: 30px; /* 为了让导航栏和内容间有点间距 */
+}
+
+.navbar a {
+    display: inline-block;
+    color: #fff;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.navbar a:hover {
+    background-color: #FF8C42; /* 高亮颜色 */
+    color: white;
+}
+
+/* 保留首页的头部样式 */
+header {
     background-color: #4A3C31; /* 深棕色 */
     color: #fff;
     padding: 20px 0;
     text-align: center;
+    position: relative; /* 使 logo 定位相对于 header */
 }
 
-footer h2 {
-    font-size: 2rem;
+/* 头部容器，保证标题和logo在同一行 */
+header .header-container {
+    display: flex;
+    justify-content: space-between; /* 使标题和logo分布在两端 */
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+/* 头部标题样式 */
+header h1 {
     margin: 0;
+    font-size: 3rem;
+    text-transform: uppercase;
+    white-space: nowrap; /* 保证标题不会换行 */
+    overflow: hidden;
+    text-overflow: ellipsis; /* 超长标题显示省略号 */
 }
 
-footer p {
-    margin: 10px 0;
+/* Logo样式 */
+header img {
+    position: absolute;
+    right: 20px; /* 使Logo固定在右上角 */
+    top: 20px;  /* 距离顶部20px */
+    max-height: 80px;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem; /* 缩小标题字体 */
+    }
+
+    header img {
+        max-height: 60px; /* 在平板上缩小logo */
+        top: 10px; /* 调整logo在平板上的位置 */
+    }
+
+    .price-section {
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    .price-category h3 {
+        font-size: 1.8rem;
+    }
+
+    .price-list li {
+        font-size: 1rem; /* 调整价格列表字体 */
+    }
+
+    .order-now-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem; /* 在手机上进一步缩小标题字体 */
+    }
+
+    header img {
+        max-height: 50px; /* 更小的Logo */
+        top: 10px; /* 确保logo位置合适 */
+    }
+
+    .price-section {
+        padding: 10px;
+        margin: 10px auto;
+    }
+
+    .price-category h3 {
+        font-size: 1.6rem;
+    }
+
+    .price-list li {
+        font-size: 0.9rem;
+    }
+
+    .order-now-btn {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+
+    .navbar a {
+        font-size: 1rem; /* 缩小导航栏字体 */
+    }
+}
+
+/* 页脚样式 */
+footer {
+    background-color: #4A3C31;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
     font-size: 1.1rem;
-}
-
-footer a {
-    color: #FF8C42;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
 }
