@@ -20,20 +20,22 @@ header {
 .header-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between; /* 保证标题与Logo保持在两端 */
     padding: 0 20px;
-    flex-wrap: wrap; /* 允许元素换行 */
+    flex-wrap: nowrap; /* 确保元素在同一行 */
 }
 
 .header-container .header-info {
     text-align: left;
-    margin-right: 20px;
-    flex: 1; /* 让标题占据剩余空间 */
+    flex-grow: 1; /* 确保标题部分占满剩余空间 */
 }
 
 .header-container h1 {
     margin: 0;
     font-size: 3rem;
+    white-space: nowrap; /* 防止标题换行 */
+    overflow: hidden;
+    text-overflow: ellipsis; /* 超长文本显示省略号 */
 }
 
 .header-container .header-info p {
@@ -42,9 +44,9 @@ header {
 }
 
 .logo {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    position: relative;
+    top: 0;
+    right: 0;
 }
 
 .logo img {
@@ -193,18 +195,10 @@ footer a:hover {
 @media (max-width: 768px) {
     .header-container h1 {
         font-size: 2.5rem; /* 在平板和手机上缩小标题 */
-        text-align: center;
     }
 
     .header-container .header-info p {
         font-size: 1rem; /* 调整副标题字体大小 */
-    }
-
-    .logo {
-        position: relative;
-        top: 0;
-        right: 0;
-        margin-top: 20px;
     }
 
     .logo img {
