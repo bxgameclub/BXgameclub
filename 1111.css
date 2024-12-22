@@ -1,38 +1,62 @@
-/* style_order.css */
-
-/* 基本页面样式 */
+/* 基本布局 */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #F4D9B4; /* 摩卡慕斯色 */
+    line-height: 1.6;
+    background-color: #C49A6C; /* 摩卡慕斯色背景 */
     color: #4A3C31; /* 深棕色文字 */
 }
 
-/* 网站头部 */
+/* 头部样式 */
 header {
-    background-color: #4A3C31; /* 深棕色 */
+    background: #C49A6C; /* 摩卡慕斯色 */
     color: #fff;
     padding: 20px 0;
     text-align: center;
     position: relative;
 }
 
-header img.logo {
-    max-height: 80px;
-    position: absolute; /* 将 logo 定位到右上角 */
-    right: 20px; /* 距离右边20px */
-    top: 50%; /* 垂直居中 */
-    transform: translateY(-50%); /* 垂直居中调整 */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    flex-wrap: wrap; /* 允许换行以适应小屏幕 */
+}
+
+.header-container .header-info {
+    text-align: left;
+    margin-right: 20px;
+}
+
+.header-container h1 {
+    margin: 0;
+    font-size: 3rem;
+}
+
+.header-container .header-info p {
+    margin-top: 5px;
+    font-size: 1.2rem;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.logo img {
+    width: 200px; /* 固定Logo大小为200px */
+    height: auto;
 }
 
 /* 导航栏 */
 nav {
-    background-color: #4A3C31;
-    overflow: hidden;
+    background: #A77B4F; /* 深棕色 */
 }
 
-.nav-links {
+nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -40,134 +64,189 @@ nav {
     justify-content: center;
 }
 
-.nav-links li {
-    margin: 0 10px;
+nav ul li {
+    margin: 0 15px;
 }
 
-.nav-links a {
-    color: white;
+nav ul li a {
+    color: #fff;
     text-decoration: none;
-    padding: 14px 16px;
-    font-size: 18px;
+    padding: 10px 15px;
+    display: block;
+    transition: background 0.3s;
 }
 
-.nav-links a:hover {
-    background-color: #856A4D; /* 浅棕色 */
+nav ul li a:hover {
+    background: #9E7B4F; /* 更深的棕色 */
+    border-radius: 5px;
 }
 
-/* 订单表单 */
-.order-form {
-    width: 60%;
-    margin: 40px auto;
-    background-color: #fff;
+nav ul li .order-btn {
+    background-color: #FF8C42; /* 橙色 */
+    border-radius: 5px;
+}
+
+/* 服务概览 */
+.services-overview {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     padding: 20px;
+}
+
+.service-card {
+    background: #F4D9B4; /* 淡米色 */
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 250px;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.order-form h2 {
-    text-align: center;
+.service-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.service-card h3 {
+    margin: 10px 0;
     color: #4A3C31;
 }
 
-.form-group {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    font-weight: bold;
-}
-
-select, textarea, input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ddd;
+.service-card .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #FF8C42; /* 橙色按钮 */
+    color: #fff;
+    text-decoration: none;
     border-radius: 5px;
+    transition: background 0.3s;
 }
 
-textarea {
-    resize: vertical;
+.service-card .btn:hover {
+    background: #E7802C;
 }
 
-button.btn {
-    width: 100%;
-    padding: 15px;
-    background-color: #4A3C31;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-button.btn:hover {
-    background-color: #856A4D;
-}
-
-/* 服务声明和复选框区域 */
-#agreement-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-#agreement-section label {
-    font-size: 16px;
-}
-
-.checkbox-label {
-    display: flex;
-    align-items: center;
-}
-
-.checkbox-label input {
-    margin-right: 10px;
-}
-
-button.btn:disabled {
-    background-color: #ccc; /* 禁用按钮样式 */
-}
-
-/* 页脚 */
-footer {
-    background-color: #4A3C31;
-    color: white;
+/* 下单按钮部分 */
+.order-section {
     text-align: center;
+    padding: 40px 20px;
+    background-color: #F4D9B4; /* 淡米色 */
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #4A3C31;
+}
+
+.order-section p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.order-now-btn {
+    background-color: #FF8C42;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+/* 联系方式 */
+footer {
+    background-color: #4A3C31; /* 深棕色 */
+    color: #fff;
     padding: 20px 0;
+    text-align: center;
+}
+
+footer h2 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+footer p {
+    margin: 10px 0;
+    font-size: 1.1rem;
 }
 
 footer a {
-    color: white;
+    color: #FF8C42;
     text-decoration: none;
 }
 
-/* 提示框样式 */
-.alert-box {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #ff6347;
-    color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
+footer a:hover {
+    text-decoration: underline;
 }
 
-.alert-box button {
-    background-color: white;
-    color: #ff6347;
-    font-size: 1em;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
+/* 响应式设计 */
+
+/* 小屏幕（手机）适配 */
+@media (max-width: 767px) {
+    .header-container {
+        flex-direction: column; /* 让头部内容垂直排列 */
+        align-items: center;
+    }
+
+    .header-container h1 {
+        font-size: 2.5rem; /* 小屏幕缩小标题字体 */
+    }
+
+    .header-container .header-info p {
+        font-size: 1rem; /* 缩小段落字体 */
+    }
+
+    .logo img {
+        width: 150px; /* 调整Logo大小 */
+    }
+
+    nav ul {
+        flex-direction: column; /* 导航栏垂直排列 */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* 调整导航项的间距 */
+    }
+
+    .service-card {
+        width: 100%; /* 服务卡片宽度为100% */
+        max-width: 300px; /* 最大宽度限制 */
+    }
+
+    .order-now-btn {
+        padding: 12px 25px; /* 缩小按钮 */
+        font-size: 1rem; /* 缩小字体 */
+    }
+
+    footer h2 {
+        font-size: 1.5rem; /* 缩小footer标题字体 */
+    }
+
+    footer p {
+        font-size: 1rem; /* 缩小footer段落字体 */
+    }
 }
 
-.alert-box button:hover {
-    background-color: #ff6347;
-    color: white;
+/* 中屏幕适配（平板设备） */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .header-container h1 {
+        font-size: 2.8rem; /* 中等屏幕适应标题大小 */
+    }
+
+    .service-card {
+        width: 45%; /* 平板设备上，服务卡片占45%的宽度 */
+    }
+
+    .order-now-btn {
+        padding: 14px 28px;
+    }
 }
