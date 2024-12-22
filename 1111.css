@@ -22,12 +22,13 @@ header {
     align-items: center;
     justify-content: center;
     padding: 0 20px;
-    flex-wrap: wrap; /* 允许换行以适应小屏幕 */
+    flex-wrap: wrap; /* 允许元素换行 */
 }
 
 .header-container .header-info {
     text-align: left;
     margin-right: 20px;
+    flex: 1; /* 让标题占据剩余空间 */
 }
 
 .header-container h1 {
@@ -47,7 +48,7 @@ header {
 }
 
 .logo img {
-    width: 200px; /* 固定Logo大小为200px */
+    width: 150px; /* 设置Logo大小为150px，保证兼容性 */
     height: auto;
 }
 
@@ -188,65 +189,61 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* 响应式设计 */
-
-/* 小屏幕（手机）适配 */
-@media (max-width: 767px) {
-    .header-container {
-        flex-direction: column; /* 让头部内容垂直排列 */
-        align-items: center;
-    }
-
+/* 响应式布局 */
+@media (max-width: 768px) {
     .header-container h1 {
-        font-size: 2.5rem; /* 小屏幕缩小标题字体 */
+        font-size: 2.5rem; /* 在平板和手机上缩小标题 */
+        text-align: center;
     }
 
     .header-container .header-info p {
-        font-size: 1rem; /* 缩小段落字体 */
+        font-size: 1rem; /* 调整副标题字体大小 */
+    }
+
+    .logo {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-top: 20px;
     }
 
     .logo img {
-        width: 150px; /* 调整Logo大小 */
+        width: 120px; /* 缩小Logo */
     }
 
     nav ul {
-        flex-direction: column; /* 导航栏垂直排列 */
+        flex-direction: column;
     }
 
     nav ul li {
-        margin: 10px 0; /* 调整导航项的间距 */
+        margin: 10px 0;
     }
 
-    .service-card {
-        width: 100%; /* 服务卡片宽度为100% */
-        max-width: 300px; /* 最大宽度限制 */
-    }
-
-    .order-now-btn {
-        padding: 12px 25px; /* 缩小按钮 */
-        font-size: 1rem; /* 缩小字体 */
-    }
-
-    footer h2 {
-        font-size: 1.5rem; /* 缩小footer标题字体 */
-    }
-
-    footer p {
-        font-size: 1rem; /* 缩小footer段落字体 */
+    .order-section h2 {
+        font-size: 2rem;
     }
 }
 
-/* 中屏幕适配（平板设备） */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (max-width: 480px) {
     .header-container h1 {
-        font-size: 2.8rem; /* 中等屏幕适应标题大小 */
+        font-size: 2rem; /* 更小的手机屏幕上，进一步减小标题 */
     }
 
     .service-card {
-        width: 45%; /* 平板设备上，服务卡片占45%的宽度 */
+        width: 100%; /* 服务卡片在手机屏幕上占满全宽 */
+        margin: 10px 0;
     }
 
     .order-now-btn {
-        padding: 14px 28px;
+        font-size: 1rem; /* 按钮字体调整 */
+        padding: 10px 20px;
+    }
+
+    footer h2 {
+        font-size: 1.5rem;
+    }
+
+    footer p {
+        font-size: 1rem;
     }
 }
